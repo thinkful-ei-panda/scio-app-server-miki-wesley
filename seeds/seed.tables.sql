@@ -13,7 +13,7 @@ VALUES
     'Dunder Mifflin Admin',
     -- password = "pass"
     '$2a$10$fCWkaGbt7ZErxaxclioLteLUgg4Q3Rp09WW0s/wSLxDKYsaGYUpjG'
-  );
+  ),
   (
     2,
     'adminFrench',
@@ -24,7 +24,7 @@ VALUES
 
 INSERT INTO "language" ("id", "name", "user_id")
 VALUES
-  (1, 'French', 2);
+  (1, 'French', 2),
   (2, 'Latin', 1);
 
 INSERT INTO "word" ("id", "language_id", "original", "translation", "next")
@@ -36,7 +36,7 @@ VALUES
   (5, 1, 'traduire', 'translate', 6),
   (6, 1, 'incroyable', 'amazing', 7),
   (7, 1, 'chien', 'dog', 8),
-  (8, 1, 'chat', 'cat', null);
+  (8, 1, 'chat', 'cat', null),
   (9, 2, 'AD - anno Domini', 'in the year of the Lord', 10),
   (10, 2, 'Cp - ceteris Paribus', 'all other things being equal', 11),
   (11, 2, 'et al.', 'et al, and others', 12),
@@ -46,7 +46,7 @@ VALUES
   (15, 2, 'P.S. - post scriptum', 'after what has been written', 16),
   (16, 2, 'R.I.P. - requiescat in pace', 'may he/she rest in peace', 17),
   (17, 2, 's.o.s. - si opus-sit', 'if there is need', 18),
-  (18, 2, 'vs. - versus', 'against', 19);
+  (18, 2, 'vs. - versus', 'against', 19),
   (19, 2, 'f/ff - folio/foliis', 'following', 20),
   (20, 2, 'vs. - versus', 'against', null);
 
