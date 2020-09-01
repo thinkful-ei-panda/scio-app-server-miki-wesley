@@ -46,7 +46,7 @@ const UserService = {
       const [languageId] = await trx
         .into('language')
         .insert([
-          { name: 'French', user_id },
+          { name: 'Latin', user_id },
         ], ['id'])
 
       // when inserting words,
@@ -56,16 +56,20 @@ const UserService = {
         .from('word_id_seq')
         .select('last_value')
         .first()
-
+        
       const languageWords = [
-        ['entraine toi', 'practice', 2],
-        ['bonjour', 'hello', 3],
-        ['maison', 'house', 4],
-        ['développeur', 'developer', 5],
-        ['traduire', 'translate', 6],
-        ['incroyable', 'amazing', 7],
-        ['chien', 'dog', 8],
-        ['chat', 'cat', null],
+        ['AD - anno Domini', 'in the year of the Lord', 2],
+        ['Cp - ceteris Paribus', 'all other things being equal', 3],
+        ['et al.', 'et al, and others', 4],
+        ['etc. - et cetera', 'and other things', 5],
+        ['e.g. - exempli gratia', 'for example', 6],
+        ['i.e. - id est', 'in other words', 7],
+        ['P.S. - post scriptum', 'after what has been written', 8],
+        ['R.I.P. - requiescat in pace', 'may he/she rest in peace', 9],
+        ['s.o.s. - si opus-sit', 'if there is need', 10],
+        [ 'C.V. - curriculum vitae', 'course of life', 11],
+        [ 'f/ff - folio/foliis', 'following', 12],
+        [ 'vs. - versus', 'against', null],
       ]
 
       const [languageHeadId] = await trx
