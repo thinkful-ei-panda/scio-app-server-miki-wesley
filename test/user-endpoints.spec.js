@@ -172,17 +172,22 @@ describe('User Endpoints', function () {
           name: 'test name',
         }
         const expectedList = {
-          name: 'French',
+          name: 'Latin',
           total_score: 0,
-          words: [
-            { original: 'entraine toi', translation: 'practice' },
-            { original: 'bonjour', translation: 'hello' },
-            { original: 'maison', translation: 'house' },
-            { original: 'développeur', translation: 'developer' },
-            { original: 'traduire', translation: 'translate' },
-            { original: 'incroyable', translation: 'amazing' },
-            { original: 'chien', translation: 'dog' },
-            { original: 'chat', translation: 'cat' },
+          words: 
+          [
+            {original: 'AD - anno Domini', translation: 'in the year of the Lord'},
+            {original: 'Cp - ceteris Paribus', translation: 'all other things being equal'},
+            {original: 'et al.', translation: 'et al, and others'},
+            {original: 'etc. - et cetera', translation: 'and other things'},
+            {original: 'e.g. - exempli gratia', translation: 'for example'},
+            {original: 'i.e. - id est', translation: 'in other words'},
+            {original: 'P.S. - post scriptum', translation: 'after what has been written'},
+            {original: 'R.I.P. - requiescat in pace', translation:'may he/she rest in peace'},
+            {original: 's.o.s. - si opus-sit', translation: 'if there is need'},
+            {original:  'C.V. - curriculum vitae', translation: 'course of life'},
+            {original:  'f/ff - folio/foliis', translation: 'following'},
+            {original:  'vs. - versus', translation: 'against'},
           ]
         }
         return supertest(app)
