@@ -55,7 +55,7 @@ const LanguageService = {
       .update(updatedWord)
   },
 
-  async updateDatabaseWithWordsAndHead(db,LinkedList,language_id){    
+  async updateDatabaseWithWordsHeadAndScore(db,LinkedList,language){    
     let currentWord = LinkedList.head
     while(currentWord !== null){
       
@@ -66,8 +66,8 @@ const LanguageService = {
     currentWord = LinkedList.head    
     await db
       .from('language')
-      .where({ id : language_id })
-      .update({head: currentWord.value.id})
+      .where({ id : language.id })
+      .update({head: currentWord.value.id, total_score: language.total_score})
   },
 
   populateLinkedListWithWords(words,LinkedList, head_id){

@@ -47,7 +47,7 @@ class LinkedList {
     currentNode = null
   }
 
-  update(item){
+  update(item){    
     if(this.head === null){
       throw new Error('Empty Linked List')
     }
@@ -160,10 +160,8 @@ languageRouter
   })
 
 languageRouter
-  .get('/head', async (req, res, next) => {
-    // implement me
-    let {language} = req
-    // console.log(language, user)
+  .get('/head', async (req, res, next) => {    
+    let {language} = req    
     try {      
       const headWord = await LanguageService.getWordById(
         req.app.get('db'),
@@ -185,10 +183,10 @@ languageRouter
   })
 
 languageRouter
-  .post('/guess', express.json(), async (req, res, next) => {    
+  .post('/guess', express.json(), async (req, res, next) => {        
     
-    // implement me
-    const {guess} = req.body        
+    const {guess} = req.body
+    let language = req.language
 
     if(!guess) {
       return res.status(400).json({ error: "Missing 'guess' in request body" })
@@ -197,12 +195,12 @@ languageRouter
     try{
       const words = await LanguageService.getLanguageWords(
         req.app.get('db'),
-        req.language.id
+        language.id
       )
 
       const headWord = await LanguageService.getWordById(
         req.app.get('db'),
-        req.language.head,
+        language.head,
       )
 
       //create linked list and populate it with the words in their current order
@@ -210,42 +208,46 @@ languageRouter
       LanguageService.populateLinkedListWithWords(words, wordsList, headWord.id)
 
       //initialize response with values from headWord and wordsList
-      const answer = headWord.translation, nextWord = wordsList.head.next.value.original
+      const answer = headWord.translation,
+        nextWord = wordsList.head.next.value.original,
+        wordCorrectCount = wordsList.head.next.value.correct_count
+        wordIncorrectCount = wordsList.head.next.value.incorrect_count
       let response = {
         answer,
         isCorrect: null,
         nextWord,
-        totalScore: req.language.total_score,
-        wordCorrectCount: headWord.correct_count,
-        wordIncorrectCount: headWord.incorrect_count,
+        totalScore: language.total_score,
+        wordCorrectCount,
+        wordIncorrectCount,
       }   
       
       //checks if guess matches answer
-      if(guess !== headWord.translation){        
+      if(guess !== headWord.translation){
         headWord.incorrect_count++;
         headWord.memory_value=1;
-        response.isCorrect = false;             
-        // ++response.wordIncorrectCount;
+        response.isCorrect = false;        
       } else {
         headWord.correct_count++;
         headWord.memory_value=headWord.memory_value*2  
         response.isCorrect = true;  
-        response.totalScore++;     
-        // ++response.wordCorrectCount;
+        response.totalScore++;
+        language.total_score++;
       }
 
       //update wordList with new values, order, and next pointers
       //update response with values      
-      wordsList.update(headWord)
+      wordsList.update(headWord)      
+
       wordsList.moveWordNode(headWord)
+      
       LanguageService.updateNextInLLValues(wordsList)      
 
       //update database with new words list
       //update database with new language head
-      await LanguageService.updateDatabaseWithWordsAndHead(
+      await LanguageService.updateDatabaseWithWordsHeadAndScore(
         req.app.get('db'),
         wordsList,
-        req.language.id
+        language
       )
 
       //send response to client
