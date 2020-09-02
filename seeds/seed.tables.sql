@@ -30,7 +30,7 @@ VALUES
   (7, 1, 'P.S. - post scriptum', 'after what has been written', 8),
   (8, 1, 'R.I.P. - requiescat in pace', 'may he/she rest in peace', 9),
   (9, 1, 's.o.s. - si opus-sit', 'if there is need', 10),
-  (10, 1, 'vs. - versus', 'against', 11),
+  (10, 1, 'C.V. - curriculum vitae', 'course of life', 11),
   (11, 1, 'f/ff - folio/foliis', 'following', 12),
   (12, 1, 'vs. - versus', 'against', null);
 
