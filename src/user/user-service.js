@@ -59,15 +59,15 @@ const UserService = {
         
       const languageWords = [
         ['AD - anno Domini', 'in the year of the Lord', 2],
-        ['Cp - ceteris Paribus', 'all other things being equal', 3],
+        ['Cp - ceteris Paribus', 'all other things equal', 3],
         ['et al.', 'et al, and others', 4],
         ['etc. - et cetera', 'and other things', 5],
         ['e.g. - exempli gratia', 'for example', 6],
         ['i.e. - id est', 'in other words', 7],
         ['P.S. - post scriptum', 'after what has been written', 8],
-        ['R.I.P. - requiescat in pace', 'may he/she rest in peace', 9],
+        ['R.I.P. - requiescat in pace', 'rest in peace', 9],
         ['s.o.s. - si opus-sit', 'if there is need', 10],
-        [ 'C.V. - curriculum vitae', 'course of life', 11],
+        [ 'C.V. - curriculum vitae', 'resume', 11],
         [ 'f/ff - folio/foliis', 'following', 12],
         [ 'vs. - versus', 'against', null],
       ]

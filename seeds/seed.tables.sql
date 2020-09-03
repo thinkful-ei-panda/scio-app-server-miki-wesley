@@ -22,15 +22,15 @@ VALUES
 INSERT INTO "word" ("id", "language_id", "original", "translation", "next")
 VALUES  
   (1, 1, 'AD - anno Domini', 'in the year of the Lord', 2),
-  (2, 1, 'Cp - ceteris Paribus', 'all other things being equal', 3),
-  (3, 1, 'et al.', 'et al, and others', 4),
+  (2, 1, 'Cp - ceteris Paribus', 'all other things equal', 3),
+  (3, 1, 'et al.', 'and others', 4),
   (4, 1, 'etc. - et cetera', 'and other things', 5),
   (5, 1, 'e.g. - exempli gratia', 'for example', 6),
   (6, 1, 'i.e. - id est', 'in other words', 7),
   (7, 1, 'P.S. - post scriptum', 'after what has been written', 8),
-  (8, 1, 'R.I.P. - requiescat in pace', 'may he/she rest in peace', 9),
+  (8, 1, 'R.I.P. - requiescat in pace', 'rest in peace', 9),
   (9, 1, 's.o.s. - si opus-sit', 'if there is need', 10),
-  (10, 1, 'C.V. - curriculum vitae', 'course of life', 11),
+  (10, 1, 'C.V. - curriculum vitae', 'resume', 11),
   (11, 1, 'f/ff - folio/foliis', 'following', 12),
   (12, 1, 'vs. - versus', 'against', null);
 
