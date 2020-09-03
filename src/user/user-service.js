@@ -60,7 +60,7 @@ const UserService = {
       const languageWords = [
         ['AD - anno Domini', 'in the year of the Lord', 2],
         ['Cp - ceteris Paribus', 'all other things equal', 3],
-        ['et al.', 'and others', 4],
+        ['et al. - et alia', 'and others', 4],
         ['etc. - et cetera', 'and other things', 5],
         ['e.g. - exempli gratia', 'for example', 6],
         ['i.e. - id est', 'in other words', 7],

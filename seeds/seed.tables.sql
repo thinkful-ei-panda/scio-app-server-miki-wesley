@@ -23,7 +23,7 @@ INSERT INTO "word" ("id", "language_id", "original", "translation", "next")
 VALUES  
   (1, 1, 'AD - anno Domini', 'in the year of the Lord', 2),
   (2, 1, 'Cp - ceteris Paribus', 'all other things equal', 3),
-  (3, 1, 'et al.', 'and others', 4),
+  (3, 1, 'et al. - et alia', 'and others', 4),
   (4, 1, 'etc. - et cetera', 'and other things', 5),
   (5, 1, 'e.g. - exempli gratia', 'for example', 6),
   (6, 1, 'i.e. - id est', 'in other words', 7),
