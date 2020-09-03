@@ -222,7 +222,7 @@ languageRouter
       }   
       
       //checks if guess matches answer
-      if(guess !== headWord.translation){
+      if(guess.toLowerCase() !== headWord.translation.toLowerCase()){
         headWord.incorrect_count++;
         headWord.memory_value=1;
         response.isCorrect = false;        
