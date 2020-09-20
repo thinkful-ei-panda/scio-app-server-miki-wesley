@@ -2,7 +2,7 @@
 
 Live App: https://scio-app.vercel.app/
 
-Server Repo: https://github.com/thinkful-ei-panda/scio-app-server-miki-wesley
+Client Repo: https://github.com/thinkful-ei-panda/scio-app-client-miki-wesley
 
 ## Local dev setup
 
